@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="transcripts.msu.ac.zw" id="c0673e1a-1826-4fe6-8d80-25d7bc260003" port="64371" nameFormat="DESCRIPTIVE" username="root" />
+      <sshConfig authType="PASSWORD" id="00a124c5-b745-489e-8884-937c3be07cc6" port="22" customName="tra" nameFormat="CUSTOM" />
+    </configs>
+  </component>
+</project>

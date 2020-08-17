@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="312134b6-923e-4fa7-bc36-596110861c1d" name="staff">
+        <fileTransfer rootFolder="/var/www/html" accessType="SFTP" host="transcripts.msu.ac.zw" port="64371" sshConfigId="c0673e1a-1826-4fe6-8d80-25d7bc260003" sshConfig="root@transcripts.msu.ac.zw:64371 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="f9f3fc9f-1b3e-49d6-8894-f0d6714e438b" name="tra">
+        <fileTransfer accessType="SFTP" port="22" sshConfigId="00a124c5-b745-489e-8884-937c3be07cc6" sshConfig="tra">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
