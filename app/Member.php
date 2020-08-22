@@ -11,4 +11,8 @@ class Member extends Model
     public function scopeBelongsToCompany($query){
         return $query->whereCompanyId(Auth::user()->company_id);
     }
+
+    public function allocations(){
+        return $this->hasMany(MemberStand::class,'member_id','id');
+    }
 }

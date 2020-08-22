@@ -221,8 +221,8 @@
         <!-- Footer -->
         <footer class="sticky-footer bg-white">
             <div class="container my-auto">
-                <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; Your Website 2020</span>
+                <div class="copyright font-weight-bold text-gray-400 text-center my-auto">
+                    <span>LandDev Pro &copy; {{date('Y')}}. All Rights Reserved</span>
                 </div>
             </div>
         </footer>

@@ -4,12 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Member;
 use App\MemberContact;
+use App\Repositories\MemberRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class MemberController extends Controller
 {
+    private $memberRepository;
+
+    public function __construct(MemberRepository $memberRepository)
+    {
+        $this->memberRepository = $memberRepository;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -17,7 +25,8 @@ class MemberController extends Controller
      */
     public function index()
     {
-        //
+        $members = $this->memberRepository->getAll();
+        return view('member.index', array('members' => $members));
     }
 
     /**
@@ -46,11 +55,10 @@ class MemberController extends Controller
         $member->saveOrFail();
 
 
-
         DB::table('member_contacts')->insertOrIgnore([
-            ['member_id' => $member->id, 'contact_type' => 'email','contact'=>$request->email],
-            ['member_id' => $member->id, 'contact_type' => 'phone','contact'=>$request->phone],
-            ['member_id' => $member->id, 'contact_type' => 'address','contact'=>$request->address],
+            ['member_id' => $member->id, 'contact_type' => 'email', 'contact' => $request->email],
+            ['member_id' => $member->id, 'contact_type' => 'phone', 'contact' => $request->phone],
+            ['member_id' => $member->id, 'contact_type' => 'address', 'contact' => $request->address],
         ]);
         if ($member->save()) {
             return back()->with('success', 'Member added successfully');

@@ -10,7 +10,14 @@
         </fileTransfer>
       </webServer>
       <webServer id="f9f3fc9f-1b3e-49d6-8894-f0d6714e438b" name="tra">
-        <fileTransfer accessType="SFTP" port="22" sshConfigId="00a124c5-b745-489e-8884-937c3be07cc6" sshConfig="tra">
+        <fileTransfer rootFolder="/var/www/html" accessType="SFTP" host="transcripts.msu.ac.zw" port="64371" sshConfigId="c0673e1a-1826-4fe6-8d80-25d7bc260003" sshConfig="root@transcripts.msu.ac.zw:64371 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="96835964-15f1-4b8c-9bda-516e0fa0bf51" name="payment">
+        <fileTransfer rootFolder="/var/www/" accessType="SFTP" host="payments.msu.ac.zw" port="64371" sshConfigId="bff466a6-389a-4fd9-8502-36dd928dc3f4" sshConfig="root@payments.msu.ac.zw:64371 password">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

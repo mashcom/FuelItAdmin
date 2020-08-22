@@ -12,7 +12,7 @@
                 <div class="col-lg-6">
                     <div class="p-5">
                         <div class="">
-                            <h1 class="text-gray-900 mb-4 font-weight-bolder">LandDev Pro</h1>
+                            <h1 class="text-gray-900 mb-4 font-weight-bolder">{{ config('app.name', 'Laravel') }}</h1>
                         </div>
                         <form method="POST" action="{{ route('login') }}">
                             @csrf

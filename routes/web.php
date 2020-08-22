@@ -16,9 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return redirect('/home');
 });
-Route::get('/payment', function () {
-    return view('payment');
-});
+
 
 Auth::routes();
 
@@ -28,5 +26,8 @@ Route::middleware('auth')->group(function(){
     Route::resource('member','MemberController');
     Route::get('allocate/create/{id}','MemberStandController@create');
     Route::resource('allocate','MemberStandController');
+    Route::resource('allocation/payment','AllocationPaymentController');
+    Route::resource('payment','PaymentController');
+
 
 });

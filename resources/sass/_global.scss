@@ -15,7 +15,11 @@ a {
   }
 }
 body,table{
-    color: $black;
+    color: $black !important;
+}
+.bg-gradient-primary-to-secondary {
+    background-color: #0061f2;
+    background-image: linear-gradient(135deg, #0061f2 0%, rgba(105, 0, 199, 0.8) 100%);
 }
 // Main page wrapper
 #wrapper {

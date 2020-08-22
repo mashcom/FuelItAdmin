@@ -17,7 +17,8 @@
         "laravel/passport": "^9.3",
         "laravel/telescope": "^3.5",
         "laravel/tinker": "^2.0",
-        "laravel/ui": "^2.1"
+        "laravel/ui": "^2.1",
+        "paypal/paypal-checkout-sdk": "1.0.1"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

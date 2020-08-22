@@ -21,4 +21,8 @@ class Stand extends Model
     {
         return $this->hasOne(Location::class,"id","location_id");
     }
+
+    public function company(){
+        return $this->hasOne(Company::class,'id','company_id');
+    }
 }

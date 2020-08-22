@@ -19,7 +19,7 @@
 
                     <div class="row">
                         <div class="col-sm-12">
-                            <table class="table table-bordered dataTable" id="dataTable" width="100%"
+                            <table class="table table-borderedd  table-striped  dataTable" id="dataTable" width="100%"
                                    cellspacing="0" role="grid" aria-describedby="dataTable_info"
                                    style="width: 100%;">
                                 <thead>
@@ -62,6 +62,15 @@
                                                   <i class="fas fa-trash-alt"></i>
                                                 </span>
                                                         <span class="text">Deallocate</span>
+                                                    </a>
+                                                @endif
+
+                                                @if(!empty($stand->allocation))
+                                                    <a href="{{url('allocation/payment',$stand->allocation->id)}}" class="btn btn-secondary btn-sm btn-icon-split">
+                                                <span class="icon text-white-50">
+                                                  <i class="fas fa-money-bill"></i>
+                                                </span>
+                                                        <span class="text">Payments</span>
                                                     </a>
                                                 @endif
 
