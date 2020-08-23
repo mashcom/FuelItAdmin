@@ -7,7 +7,7 @@
             @if(Session::has('success'))
                 <p class="alert alert-success">{{ Session::get('success') }}</p>
             @endif
-            <form method="post" action="{{url('/member')}}">
+            <form method="post" action="{{url('/admin/member')}}">
             {{@csrf_field()}}
 
             <!-- Form Row-->

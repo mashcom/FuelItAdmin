@@ -1,21 +1,22 @@
-@extends('layouts.app')
+@extends('layouts.payment_wizard')
 
 @section('content')
 
 @if(!Session::has('order_initiated'))
-<h1 class="font-weight-bolder">Make Payment</h1>
-<div class="card col-lg-6 p-0">
-    <div class="card-header">
-        Make Payment
-    </div>
+<div class="card col-lg-6 p-0 mt-4 mx-auto animated--fade-in-up">
+
     <div class="card-body">
+        <a href="{{url('/payment')}}" class="btn btn-outline-primary mb-3">Back</a>
+        <div>
+            <div class="h3 text-primary font-weight-bold">Select Stand</div>
+            <p class="text-muted mb-4">Select the stand you wish to pay for</p>
+        </div>
         <div class="p-2">
             <form method="post" action="{{url('/payment')}}">
                 {{@csrf_field()}}
 
                 <!-- Form Row-->
                 <div class="form-row">
-                    <div class="alert alert-success col-lg-12 font-weight-bold">Select the stand you wish to pay for</div>
                     @if ($errors->any())
                     <div class="alert alert-danger col-lg-12">
                         <ul>
@@ -68,12 +69,14 @@
 @endif
 
 @if(Session::has('order_initiated'))
-<h1 class="font-weight-bolder">Make Payment</h1>
-<div class="card">
-    <div class="card-header">
-        Make Payment
-    </div>
+<div class="card col-lg-6 p-0 mt-4 mx-auto">
+
     <div class="card-body">
+        <a href="{{ url()->full() }}" class="btn btn-outline-primary mb-3">Back</a>
+        <div>
+            <div class="h3 text-primary font-weight-bold">Verify & Finalise Payment</div>
+            <p class="text-muted mb-4">Verify the correctness of details and make payment if they are correct</p>
+        </div>
 
         <?php
         $stand = Session::get('stand');
@@ -99,6 +102,10 @@
                 <tr>
                     <td>Location</td>
                     <td>{{@$stand->location->name }}</td>
+                </tr>
+                <tr>
+                    <td>Developer</td>
+                    <td>{{@$stand->company->name }}</td>
                 </tr>
                 <thead class="thead-dark">
                     <tr>
@@ -136,13 +143,16 @@
         <div class="alert alert-danger font-weight-bold">Please confirm the stand details before making
             payment!
         </div>
-        <div id="paypal-button-container" class="col-lg-6 p-0"></div>
+        <div id="paypal-button-container" class="col-lg-12 p-0">
+
+        </div>
         <script type="application/javascript" src="https://www.paypal.com/sdk/js?client-id=AXl7AB-E7MDwT0h3-U0fASgrUBdjVbQYXuCFX-cOwH5ygBzfMpKDA-z799M2b7WK3wz4EVZVvy92O5yJ">
         </script>
         <script type="application/javascript">
             paypal.Buttons({
                 createOrder: function(data, actions) {
                     return actions.order.create({
+                        intent: "CAPTURE",
                         purchase_units: [{
                             amount: {
                                 value: <?php echo $amount; ?>

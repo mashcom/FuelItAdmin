@@ -26,7 +26,7 @@
                         <td>{{$member->surname}}</td>
                         <td>{{$member->national_id}}</td>
                         <td>
-                            <a href="{{url('$member',$member->id)}}" class="btn btn-primary btn-sm btn-icon-split">
+                            <a href="{{url('/admin/member',$member->id)}}" class="btn btn-primary btn-sm btn-icon-split">
                                                 <span class="icon text-white-50">
                                                   <i class="fas fa-eye"></i>
                                                 </span>

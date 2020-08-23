@@ -48,7 +48,7 @@
                                         </td>
                                         <td>
                                             @if(empty($stand->allocation))
-                                                <a href="<?php echo url("/allocate/create",$stand->id);?>" class="btn btn-success btn-sm btn-icon-split">
+                                                <a href="<?php echo url("/admin/allocate/create",$stand->id);?>" class="btn btn-success btn-sm btn-icon-split">
                                                 <span class="icon text-white-50">
                                                   <i class="fas fa-check-circle"></i>
                                                 </span>
@@ -66,7 +66,7 @@
                                                 @endif
 
                                                 @if(!empty($stand->allocation))
-                                                    <a href="{{url('allocation/payment',$stand->allocation->id)}}" class="btn btn-secondary btn-sm btn-icon-split">
+                                                    <a href="{{url('/admin/allocation/payment',$stand->allocation->id)}}" class="btn btn-secondary btn-sm btn-icon-split">
                                                 <span class="icon text-white-50">
                                                   <i class="fas fa-money-bill"></i>
                                                 </span>
@@ -74,7 +74,7 @@
                                                     </a>
                                                 @endif
 
-                                            <a href="{{url('stand',$stand->id)}}" class="btn btn-primary btn-sm btn-icon-split">
+                                            <a href="{{url('/admin/stand',$stand->id)}}" class="btn btn-primary btn-sm btn-icon-split">
                                                 <span class="icon text-white-50">
                                                   <i class="fas fa-eye"></i>
                                                 </span>

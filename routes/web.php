@@ -20,14 +20,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::middleware('auth')->group(function(){
+Route::prefix('admin')->middleware('auth')->group(function(){
     Route::get('/home', 'HomeController@index')->name('home');
     Route::resource('stand','StandController');
     Route::resource('member','MemberController');
     Route::get('allocate/create/{id}','MemberStandController@create');
     Route::resource('allocate','MemberStandController');
     Route::resource('allocation/payment','AllocationPaymentController');
-    Route::resource('payment','PaymentController');
-
-
+    
 });
+
+Route::resource('payment', 'PaymentController');

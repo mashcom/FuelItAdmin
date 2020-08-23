@@ -1,37 +1,46 @@
-@extends('layouts.app')
+@extends('layouts.payment_wizard')
 
 @section('content')
-<h1 class="font-weight-bolder">Make Payment</h1>
-
-<div class="card">
-    <div class="card-header">
-        Make Payment
-    </div>
-    <div class="card-body">
-        <div class="p-2">
-            <form method="get" action="{{url('/payment/create')}}">
-                {{@csrf_field()}}
-                @if(Session::has('error'))
-                <p class="alert alert-danger">{{ Session::get('error') }}</p>
-                @endif
-                <!-- Form Row-->
-                <div class="form-row col-lg-6">
-                    <!-- Form Group (first name)-->
-                    <div class="form-group col-lg-12">
-                        <label class="small mb-1 font-weight-bold" for="inputFirstName">National ID Number</label>
-                        <input required class="form-control @error('national_id') is-invalid @enderror" value="{{ old('national_id') }}" id="national-id" name="national_id" type="text" placeholder="National ID Number">
-                        @error('national_id')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
-                    </div>
-
-                    <input type="submit" value="Initiate Payment" class="btn btn-success font-weight-bold">
+<form method="get" action="{{url('/payment/create')}}">
+    <div class="col-xl-5 col-lg-6 mx-auto col-md-8 col-sm-11 mt-4">
+        <div class="card  h-100">
+            <div class="card-body px-5 pt-5 d-flex flex-column">
+                <div>
+                    <div class="h3 text-primary font-weight-bold">Pay Your Stand Subscription</div>
+                    <p class="text-muted mb-4">Enter your National ID Number to get started</p>
                 </div>
-            </form>
+                <div class="">
+                    <div class="py-2">
+
+                        {{@csrf_field()}}
+                        @if(Session::has('error'))
+                        <p class="alert alert-danger">{{ Session::get('error') }}</p>
+                        @endif
+                        <!-- Form Row-->
+                        <div class="form-row col-lg-12">
+                            <!-- Form Group (first name)-->
+                            <div class="form-group col-lg-12">
+                                <label class="small mb-1 font-weight-bold" for="inputFirstName">National ID Number</label>
+                                <input required class="form-control @error('national_id') is-invalid @enderror" value="{{ old('national_id') }}" id="national-id" name="national_id" type="text" placeholder="National ID Number">
+                                @error('national_id')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer bg-transparent px-5 py-4">
+                <div class="small text-center">
+                    <button role="submit" class="btn btn-block btn-primary">Find Your Allocations</button>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-
+</form>
 @endsection

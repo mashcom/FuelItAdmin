@@ -36,8 +36,12 @@ class PaymentController extends Controller
     {
         $national_id = $_GET['national_id'];
         $allocations = $this->memberStandRepository->getByNationalId($national_id);
-        if ($allocations == null) {
-            return back()->with('error', 'Member could not be found, please try again!');
+        
+        if ($allocations==null) {
+            return back()->with('error', 'Member could not be found, please try again!')->withInput($_GET);
+        }
+        if(count($allocations->allocations)==0){
+            return back()->with('error', 'No allocation found!')->withInput($_GET);
         }
         return view('member_payment.payment')->with(array('data' => $allocations));
     }
