@@ -34,10 +34,10 @@
                             @foreach($data->allocations as $allocation)
                             <div class="list-group-item">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="allocation_id[]" value="{{$allocation->id}}">
+                                    <input class="form-check-input" type="radio" name="allocation_id[]" value="{{$allocation->id}}" id="allocation-{{$loop->index}}">
                                     <label class="form-check-label" for="exampleRadios1">
                                         <p class="p-0 m-0 font-weight-bold h5">{{$allocation->stand->stand_number}}, {{$allocation->stand->location->name}}</p>
-                                        <p class="p-0 m-0">Developer: <span class=" badge badge-success">{{$allocation->stand->company->name}}</span></p>
+                                        <p class=" p-0 m-0">Developer: <span class=" badge badge-success">{{$allocation->stand->company->name}}</span></p>
                                     </label>
                                 </div>
                             </div>

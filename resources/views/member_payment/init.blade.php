@@ -37,7 +37,7 @@
             </div>
             <div class="card-footer bg-transparent px-5 py-4">
                 <div class="small text-center">
-                    <button role="submit" class="btn btn-block btn-primary">Find Your Allocations</button>
+                    <button role="submit" name="find_allocations" class="btn btn-block btn-primary">Find Your Allocations</button>
                 </div>
             </div>
         </div>
