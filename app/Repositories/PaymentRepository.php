@@ -15,10 +15,16 @@ class PaymentRepository
      * @param $allocation_id
      * @return mixed
      */
-    public function allocation($allocation_id){
-        $payments = Payment::whereCompanyId(Auth::user()->id)->whereAllocationId($allocation_id)->get();
-        return $payments;
+    public function allocation($allocation_id)
+    {
+        return Payment::whereCompanyId(Auth::user()->id)
+            ->whereAllocationId($allocation_id)
+            ->get();
     }
 
-    
+    public function storeTransaction()
+    {
+
+    }
+
 }

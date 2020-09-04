@@ -17,7 +17,7 @@
                         <p class="alert alert-danger">{{ Session::get('error') }}</p>
                         @endif
                         <!-- Form Row-->
-                        <div class="form-row col-lg-12">
+                        <div class="form-row">
                             <!-- Form Group (first name)-->
                             <div class="form-group col-lg-12">
                                 <label class="small mb-1 font-weight-bold" for="inputFirstName">National ID Number</label>

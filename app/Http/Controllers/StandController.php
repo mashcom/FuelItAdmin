@@ -25,7 +25,7 @@ class StandController extends Controller
     public function index()
     {
         $stands = $this->standRepository->getAll();
-        return  view('stand.index',array('stands'=>$stands));
+        return view('stand.index', array('stands' => $stands));
 
     }
 
@@ -54,9 +54,9 @@ class StandController extends Controller
         $stand->company_id = Auth::user()->company_id;
         $stand->stand_number = $request->stand_number;
         if ($stand->save()) {
-            return response()->json(array("success" => true, "data" => $stand));
+            return response()->json(array("success" => TRUE, "data" => $stand));
         }
-        return response()->json(array("success" => false, "data" => $stand));
+        return response()->json(array("success" => FALSE, "data" => $stand));
 
     }
 
@@ -70,7 +70,7 @@ class StandController extends Controller
     {
 
         $stand = $this->standRepository->findById($id);
-        return  view('stand.show',array('stand'=>$stand));
+        return view('stand.show', array('stand' => $stand));
     }
 
     /**

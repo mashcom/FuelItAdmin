@@ -9,11 +9,15 @@ class StandRepository
 {
     public function getAll()
     {
-        return Stand::with('allocation.member', 'location')->belongsToCompany()->simplePaginate(200);
+        return Stand::with('allocation.member', 'location')
+            ->belongsToCompany()
+            ->simplePaginate(200);
     }
 
     public function findById($id){
-        $stand = Stand::with('allocation.member', 'location','allocation.allocator')->whereId($id)->BelongsToCompany()->firstOrFail();
-        return $stand;
+        return Stand::with('allocation.member', 'location','allocation.allocator')
+            ->whereId($id)
+            ->BelongsToCompany()
+            ->firstOrFail();
     }
 }

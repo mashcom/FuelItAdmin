@@ -40,7 +40,7 @@
             <div class="alert alert-info font-weight-bold">
                 Select the member to allocate stand below
             </div>
-            <form method="post" action="{{url('/admin/allocate')}}">
+            <form method="post" action="{{url('/allocate')}}">
                 {{@csrf_field()}}
 
                 <div class="form-row">

@@ -30,7 +30,7 @@ class MemberContactController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -41,7 +41,7 @@ class MemberContactController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\MemberContact  $memberContact
+     * @param \App\MemberContact $memberContact
      * @return \Illuminate\Http\Response
      */
     public function show(MemberContact $memberContact)
@@ -52,7 +52,7 @@ class MemberContactController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\MemberContact  $memberContact
+     * @param \App\MemberContact $memberContact
      * @return \Illuminate\Http\Response
      */
     public function edit(MemberContact $memberContact)
@@ -63,8 +63,8 @@ class MemberContactController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\MemberContact  $memberContact
+     * @param \Illuminate\Http\Request $request
+     * @param \App\MemberContact $memberContact
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, MemberContact $memberContact)
@@ -75,7 +75,7 @@ class MemberContactController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\MemberContact  $memberContact
+     * @param \App\MemberContact $memberContact
      * @return \Illuminate\Http\Response
      */
     public function destroy(MemberContact $memberContact)

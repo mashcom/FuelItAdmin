@@ -32,10 +32,10 @@
                         <label class="font-weight-bold mb-1" for="inputFirstName">Select Stand Allocation</label>
                         <ul class="list-group">
                             @foreach($data->allocations as $allocation)
-                            <div class="list-group-item">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="allocation_id[]" value="{{$allocation->id}}" id="allocation-{{$loop->index}}">
-                                    <label class="form-check-label" for="exampleRadios1">
+                            <div style="cursor: pointer;" class="list-group-item" onclick="document.getElementById('allocation-{{$loop->index}}').checked=true;">
+                                <div class=" form-check">
+                                    <input style="transform: scale(2)" class="form-check-input" type="radio" name="allocation_id[]" value="{{$allocation->id}}" id="allocation-{{$loop->index}}">
+                                    <label class="form-check-label ml-3" for="exampleRadios1">
                                         <p class="p-0 m-0 font-weight-bold h5">{{$allocation->stand->stand_number}}, {{$allocation->stand->location->name}}</p>
                                         <p class=" p-0 m-0">Developer: <span class=" badge badge-success">{{$allocation->stand->company->name}}</span></p>
                                     </label>
@@ -101,11 +101,11 @@
                 </tr>
                 <tr>
                     <td>Location</td>
-                    <td>{{@$stand->location->name }}</td>
+                    <td>{{$stand->location->name }}</td>
                 </tr>
                 <tr>
                     <td>Developer</td>
-                    <td>{{@$stand->company->name }}</td>
+                    <td>{{$stand->company->name }}</td>
                 </tr>
                 <thead class="thead-dark">
                     <tr>

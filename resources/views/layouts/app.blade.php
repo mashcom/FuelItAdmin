@@ -20,6 +20,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
 </head>
 
 <body id="page-top">
@@ -43,7 +44,7 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item">
-            <a class="nav-link" href="<?php echo url('/admin')?>">
+            <a class="nav-link" href="<?php echo url('')?>">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span></a>
         </li>
@@ -59,8 +60,8 @@
             </a>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="<?php echo url('/admin/stand') ?>">View Stands</a>
-                    <a class="collapse-item" href="<?php echo url('/admin/stand/create'); ?>">Add Stand</a>
+                    <a class="collapse-item" href="<?php echo url('/stand') ?>">View Stands</a>
+                    <a class="collapse-item" href="<?php echo url('/stand/create'); ?>">Add Stand</a>
                 </div>
             </div>
         </li>
@@ -75,8 +76,8 @@
             <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                  data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="<?php echo url('/admin/member') ?>">View Members</a>
-                    <a class="collapse-item" href="<?php echo url('/admin/member/create') ?>">Add Member</a>
+                    <a class="collapse-item" href="<?php echo url('/member') ?>">View Members</a>
+                    <a class="collapse-item" href="<?php echo url('/member/create') ?>">Add Member</a>
                 </div>
             </div>
         </li>

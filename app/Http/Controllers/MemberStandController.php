@@ -39,7 +39,7 @@ class MemberStandController extends Controller
     {
         $allocated = $this->memberStandRepository->is_allocated($id);
 
-        if($allocated){
+        if ($allocated) {
             return redirect("/stand/$id");
         }
         $stand_details = $this->standRepository->findById($id);
@@ -48,7 +48,7 @@ class MemberStandController extends Controller
             'allocated' => $allocated,
             'stand' => $stand_details,
             'members' => $members,
-            'challenge'=>rand(9000,1000000)
+            'challenge' => rand(9000, 1000000),
         );
         return view('allocate.create', $data);
     }
@@ -65,10 +65,10 @@ class MemberStandController extends Controller
         $allocation->member_id = $request->member_id;
         $allocation->stand_id = $request->stand_id;
         $allocation->allocated_by = Auth::user()->id;
-        if($allocation->save()){
-            return redirect("/stand/$request->stand_id")->with('success','Stand Allocation Success');
+        if ($allocation->save()) {
+            return redirect("/stand/$request->stand_id")->with('success', 'Stand Allocation Success');
         }
-        return back()->with('error','Stand allocation failed, please try again');
+        return back()->with('error', 'Stand allocation failed, please try again');
     }
 
     /**
