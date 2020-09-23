@@ -15,5 +15,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('auth:api')->group(function(){
-    Route::resource('stand','StandController');
+    //Route::resource('stand','StandController');
 });
+
+
+Route::get('product','APIController@products');
+Route::get('product/{name}','APIController@get_by_name');
+Route::get('product/{name}/city/{city}','APIController@search');
+Route::get('product/station/{id}','APIController@station');
+Route::get('stations/featured/{city?}','APIController@featured_stations');
+Route::get('stations/search/{name}/{city?}','APIController@search_stations');

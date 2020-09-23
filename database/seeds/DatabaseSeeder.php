@@ -5,18 +5,17 @@ use Illuminate\Database\Seeder;
 class DatabaseSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
-        $this->call(PaymentSeeder::class);
-        $this->call(CompanySeeder::class);
-        $this->call(LocationSeeder::class);
-        $this->call(MemberSeeder::class);
-        $this->call(MemberStandSeeder::class);
-        $this->call(StandSeeder::class);
-
+        $this->call([
+            StationSeeder::class,
+            UserSeeder::class,
+            ProductSeeder::class,
+            AvailabilitySeeder::class,
+        ]);
     }
 }
