@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 
 class APIController extends Controller
 {
-
     /**
      * Get all products
      * @return \Illuminate\Http\JsonResponse

@@ -44,6 +44,13 @@
           </advancedOptions>
         </fileTransfer>
       </webServer>
+      <webServer id="89277ad3-9f07-4a6a-9735-a3b2b9550f78" name="cimas">
+        <fileTransfer rootFolder="/var/www" accessType="SFTP" host="cimas.msu.ac.zw" port="64311" sshConfigId="23e8dcd6-28b9-43cd-8228-72b3b1234c3c" sshConfig="root@cimas.msu.ac.zw:64311 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>

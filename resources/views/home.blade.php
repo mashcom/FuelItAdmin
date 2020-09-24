@@ -7,145 +7,106 @@
     <div class="row">
 
         <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4">
+        <div class="col-xl-4 col-md-6 mb-4">
             <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Members</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">2000</div>
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Stations</div>
+                            <div class="h1 mb-0 font-weight-bold text-gray-800">{{$stations}}</div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-user-shield fa-2x text-gray-300"></i>
+                            <i class="fas fa-building fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4">
+        <div class="col-xl-4 col-md-6 mb-4">
             <div class="card border-left-success shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Stands</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">4000</div>
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Products</div>
+                            <div class="h1 mb-0 font-weight-bold text-gray-800">{{$products}}</div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-house-user fa-2x text-gray-300"></i>
+                            <i class="fas fa-car-side fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4">
+        <div class="col-xl-4 col-md-6 mb-4">
             <div class="card border-left-info shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Locations</div>
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Active Users</div>
                             <div class="row no-gutters align-items-center">
                                 <div class="col-auto">
-                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">8</div>
+                                    <div class="h1 mb-0 mr-3 font-weight-bold text-gray-800">{{$users}}</div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-map-pin fa-2x text-gray-300"></i>
+                            <i class="fas fa-user fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Pending Requests Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-warning shadow h-100 py-2">
+        <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Payments this month</div>
-                            <div class=" mb-0 font-weight-bold text-gray-800">USD$18,000</div>
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Cities</div>
+                            <div class="h1 mb-0 font-weight-bold text-gray-800">{{$cities}}</div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-piggy-bank fa-2x text-gray-300"></i>
+                            <i class="fas fa-location-arrow fa-2x text-gray-300"></i>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-
-        <!-- Area Chart -->
-        <div class="col-xl-8 col-lg-7">
-            <div class="card shadow mb-4">
-                <!-- Card Header - Dropdown -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
-                    <div class="dropdown no-arrow">
-                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                            <div class="dropdown-header">Dropdown Header:</div>
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card Body -->
-                <div class="card-body">
-                    <div class="chart-area"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-                        <canvas id="myAreaChart" style="display: block; height: 320px; width: 782px;" width="977" height="400" class="chartjs-render-monitor"></canvas>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Pie Chart -->
-        <div class="col-xl-4 col-lg-5">
-            <div class="card shadow mb-4">
-                <!-- Card Header - Dropdown -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
-                    <div class="dropdown no-arrow">
-                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                            <div class="dropdown-header">Dropdown Header:</div>
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card Body -->
+        <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card  {{$availability_ratio>=50?"border-left-success":"border-left-danger"}} shadow h-100 py-2">
                 <div class="card-body">
-                    <div class="chart-pie pt-4 pb-2"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-                        <canvas id="myPieChart" width="447" height="306" class="chartjs-render-monitor" style="display: block; height: 245px; width: 358px;"></canvas>
-                    </div>
-                    <div class="mt-4 text-center small">
-                    <span class="mr-2">
-                      <i class="fas fa-circle text-primary"></i> Direct
-                    </span>
-                        <span class="mr-2">
-                      <i class="fas fa-circle text-success"></i> Social
-                    </span>
-                        <span class="mr-2">
-                      <i class="fas fa-circle text-info"></i> Referral
-                    </span>
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Availability Ratio</div>
+                            <div class="h1 mb-0 font-weight-bold {{$availability_ratio>=50?"text-success":"text-danger"}}">{{$availability_ratio}}%</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-search fa-2x text-gray-300"></i>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Mobile API endpoints</div>
+                            <div class="h1 mb-0 font-weight-bold text-gray-800">6</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-code fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
 @endsection

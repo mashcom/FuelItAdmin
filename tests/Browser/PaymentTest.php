@@ -5,39 +5,33 @@ namespace Tests\Browser;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
-
+use Faker\Generator as Faker;
 class PaymentTest extends DuskTestCase
 {
     /**
-     * A Dusk test 
+     * A Dusk test
      *
+     * @param $faker
      * @return void
      */
-    public function testPaymentInitialisation()
+    public function testPaymentInitialisation(Faker $faker)
     {
-        $this->browse(function (Browser $browser) {
-            $browser->visit('/payment')
-                    ->type('national_id', '12-350201-Z-47')
-                    ->screenshot('Initialise Payment step 1')
-                    ->press('find_allocations')
-                    ->assertSee('Select Stand')
-                    ->check('#allocation-0')
-                    ->type('amount',rand(5,1000))
-                    ->screenshot('Initialise Payment step 2')
-                    ->press('input[type="submit"]')
-                    ->assertSee('Verify & Finalise Payment')
-                    ->screenshot('Initialise Payment step 3');
+
+        $this->browse(function (Browser $browser) use ($faker) {
+
+            $browser->visit('/station/create')
+                ->type('name', $faker->randomElement(array("Total","Zuva Petroleum","Puma","Redan","BP","COMOIL","Shell"))." ".$faker->streetName)
+                ->type('city', $faker->randomElement(array("Gweru","Bulawayo","Harare","Mutare","Masvingo","Victoria Falls","Kwekwe","Kadoma","Bindura")))
+                ->type('latitude', $faker->latitude)
+                ->type('longitude', $faker->longitude)
+                ->type('user', $faker->name)
+                ->type('user_email', $faker->companyEmail)
+                ->type('user_password', 'password')
+                ->screenshot('Input before submitting')
+                ->press('input[type="submit"]')
+                ->assertSee('success')
+                ->screenshot('Add station test');
         });
     }
 
-    public function testPaymentInitialisationWithInvalidId()
-    {
-        $this->browse(function (Browser $browser) {
-            $browser->visit('/payment')
-            ->type('national_id', '12-350201-Z-4789')
-            ->press('find_allocations')
-            ->assertSee('Member could not be found, please try again!')
-             ->screenshot('Initialise Payment Member Not Found step 1');
-        });
-    }
 }

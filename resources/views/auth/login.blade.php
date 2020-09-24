@@ -1,7 +1,13 @@
 @extends('layouts.login')
 
 @section('content')
-
+<style>
+    .bg-login-image {
+        background: url({{asset('/fuel.jpg')}}) !important;
+        background-position: center !important;
+        background-size: cover !important;
+    }
+</style>
 <div class="col-xl-10 col-lg-12 col-md-9">
 
     <div class="card o-hidden border-0 shadow-lg my-5">
